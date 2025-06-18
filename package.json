@@ -1,4 +1,10 @@
 {
+  "name": "yourtube-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "react-icon": "^1.0.0",
     "react-icons": "^5.5.0",
