@@ -1,0 +1,81 @@
+.premium-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #121212;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.premium-container h2 {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.premium-container p {
+  font-size: 1.1rem;
+  color: #d3d3d3;
+  margin: 10px 0;
+}
+ .premium-badge {
+  background-color: gold;
+  color: black;
+  font-weight: bold;
+  padding: 9px 8px;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin-left: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.premium-btn {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 14px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 24px;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.premium-btn:hover {
+  background-color: red;
+  transform: scale(1.05);
+}
+
+.feature-list {
+  text-align: left;
+  margin-top: 30px;
+  padding-left: 20px;
+}
+
+.feature-list li {
+  padding: 8px 0;
+  font-size: 1rem;
+  color: #ccc;
+  list-style-type: none;
+  position: relative;
+}
+
+.feature-list li::before {
+  content: "▶";
+  color: #ff0000;
+  font-size: 1rem;
+  position: absolute;
+  left: -20px;
+  top: 3px;
+}
+.premium-container button{
+    background-color: red;
+    width: 200px;
+    margin:10px;
+    padding:10px;
+    border-radius: 10px;
+    border-color: red;
+}

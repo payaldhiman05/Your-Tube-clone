@@ -12,7 +12,7 @@ export const historycontroller=async(req,res)=>{
     }
 }
 
-export const getallhistorycontroller=async(req,res)=>{
+export const getallhistory=async(req,res)=>{
     try {
         const files=await history.find();
         res.status(200).send(files)

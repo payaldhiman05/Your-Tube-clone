@@ -49,6 +49,13 @@ const Drawersliderbar = ({ toggledraw, toggledrawersidebar }) => {
               <div className="text_sidebar_icon">History</div>
             </p>
           </NavLink>
+          <NavLink to={'/Downloads'} className="icon_sidebar_div">
+            <p>
+              <AiFillPlaySquare size={22} className='icon_sidebar' style={{ margin: "auto 0.7rem" }} />
+              <div className="text_sidebar_icon">Downloads</div>
+            </p>
+          </NavLink>
+
           <NavLink to={'/Yourvideo'} className="icon_sidebar_div">
             <p>
               <AiFillPlaySquare size={22} className='icon_sidebar' style={{ margin: "auto 0.7rem" }} />

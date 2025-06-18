@@ -2,6 +2,7 @@ import React from 'react'
 import './Describechannel.css'
 import {FaEdit,FaUpload} from "react-icons/fa"
 import { useSelector } from 'react-redux'
+
 const Describechannel = ({setvideouploadpage,cid,seteditcreatechanelbtn}) => {
   // const channel=[
   //   {
@@ -14,8 +15,12 @@ const Describechannel = ({setvideouploadpage,cid,seteditcreatechanelbtn}) => {
   // ]
 const channel=useSelector(state=>state.chanelreducer)
 
-const currentchannel=channel.filter((c)=>c._id=== cid)[0]
+const currentchannel=channel.find((c)=>c._id=== cid);
 const currentuser=useSelector(state => state.currentuserreducer);
+if(!currentchannel){
+  return<div>Loading channel data...</div>
+}
+
 // console.log(currentchannel)
   return (
     <div className="container3_chanel">
@@ -28,6 +33,11 @@ const currentuser=useSelector(state => state.currentuserreducer);
       </div>
       {currentuser?.result._id === currentchannel?._id &&(
         <>
+        <div className='user-point-box'>
+          <p>
+            Points:<strong>{currentuser?.result?.points?? 0}</strong>
+          </p>
+        </div>
         <p className="editbtn_chanel" onClick={()=>seteditcreatechanelbtn(true)}>
           <FaEdit/>
           <b>Edit Channel</b>

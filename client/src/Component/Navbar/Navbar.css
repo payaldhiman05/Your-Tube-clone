@@ -1,68 +1,146 @@
-.Container_Navbar{
-    border: 1px solid;
-    display: flex;
-    height: calc(3.5rem - 2px);
-    background-color: rgb(33, 33, 33);
-    justify-content: space-between;
+.Container_Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #212121;
+  height: 3.5rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid #444;
 }
-.Burger_Logo_Navbar{
-    display: flex;
-    height: 3.3rem;
+
+.Burger_Logo_Navbar {
+  display: flex;
+  align-items: center;
 }
-.burger{
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    justify-content: space-evenly;
-    margin: 0.2rem;
-    padding: 0.5rem;
-    border: 1 px solid transparent;
-    margin-left: 0.5rem;
-    margin-right: 0.7rem;
-    border-radius: 100%;
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  margin-right: 0.8rem;
+  padding: 0.3rem;
 }
-.burger p{
-    margin: 0.5px;
-    width: 1.2rem;
-    height: 0.1rem;
-    background-color: rgb(255, 244, 244);
+
+.burger p {
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  margin: 2px 0;
 }
-.logo_div_Navbar{
-    display: flex;
-    text-decoration: none;
+
+.logo_div_Navbar {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
-.logo_title_navbar{
-    margin: auto;
-    color: white;
-    font-weight: bold;
+
+.logo_div_Navbar img {
+  height: 30px;
+  margin-right: 0.5rem;
 }
-.apps_Box{
-    width: 25px;
-    margin: auto 0.7rem;
-    height: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
+
+.logo_title_navbar {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
-.appBox{
-    border: 1px solid white;
-    margin: 0.1rem;
-    width: 2px;
-    height: 2px;
+
+.Searchbar_wrapper {
+  flex: 1;
+  margin: 0 1rem;
 }
-.Auth_cont_Navbar{
-    width: fit-content;
-    margin: auto 0.5rem;
-    position: relative;
-    display: flex;
+
+.search-icon-mobile {
+  display: none;
+  color: white;
+  cursor: pointer;
 }
-.Auth_Btn{
-    cursor: pointer;
-    color: #3ea6ff;
-    background-color: rgb(36,36,36);
-    border: 2px solid;
-    margin: 0;
-    padding: 0.5rem;
-    border-radius: 0.1rem;
+
+.NavbarRightItems {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.video-call-button {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.vid_bell_Navbar {
+  color: white;
+  cursor: pointer;
+}
+
+.apps_Box {
+  display: grid;
+  grid-template-columns: repeat(3, 6px);
+  grid-template-rows: repeat(3, 6px);
+  gap: 4px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.appBox {
+ width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 0%;
+}
+
+.Auth_cont_Navbar {
+  display: flex;
+  align-items: center;
+}
+
+.Auth_Btn {
+  cursor: pointer;
+  color: #3ea6ff;
+  background-color: transparent;
+  border: 1px solid #3ea6ff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.Chanel_logo_App {
+  text-decoration: none;
+}
+
+.fstChar_logo_App {
+  background-color: #da0e0e;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .Searchbar_wrapper {
+    display: none;
+  }
+  .search-icon-mobile {
+    display: block;
+    margin-left:60px;
+  }
+  .NavbarRightItems {
+    gap: 8px;
+  }
+  .Auth_Btn {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
 }

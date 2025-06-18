@@ -45,3 +45,12 @@
 border: 2px solid;
 color: rgb(231,140,14);
 }
+.user-points-box {
+  margin-top: 10px;
+  background-color: #f0f8ff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #1e7e34;
+  font-weight: 500;
+  font-size: 14px;
+}

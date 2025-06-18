@@ -1,38 +1,42 @@
-import users from "../Models/Auth.js"
-import jwt from "jsonwebtoken"
-export const login = async (req, res) => {
-    const { email } = req.body;
-    // console.log(email)
-    try {
-        const extinguser = await users.findOne({ email }) 
-        console.log("Existing user:",extinguser);
-        if (!extinguser) {
-            try {
-                const newuser = await users.create({ email });
-                const token = jwt.sign({
-                    email: newuser.email, id: newuser._id
-                }, process.env.JWT_SECERT, {
-                    expiresIn: "1h"
-                }
-                )
-                res.status(200).json({ result: newuser, token })
-            } catch (error) {
-                res.status(500).json({ mess: "something went wrong..." })
-                return
-            }
+import users from "../Models/Auth.js";
+import jwt from "jsonwebtoken";
 
-        } else {
-            const token = jwt.sign({
-                email: extinguser.email, id: extinguser._id
-            }, process.env.JWT_SECERT, {
-                expiresIn: "1h"
-            }
-            )
-            res.status(200).json({ result: extinguser ,token})
-        }
-    } catch (error) {
-        console.log("Login error:",error.messsage);
-        return res.status(500).json({ mess: "something went wrong...", error:error.message})
-        
+export const login = async (req, res) => {
+  const { email } = req.body;
+ console.log("Login attempt with email:",email);
+ 
+  try {
+    const existingUser = await users.findOne({ email });
+
+    if (!existingUser) {
+      const newUser = await users.create({ email });
+
+      const token = jwt.sign(
+        { email: newUser.email, id: newUser._id },
+        process.env.JWT_SECRET,
+        { expiresIn: "1d" }
+      );
+
+      return res.status(200).json({
+        result: newUser,
+        token,
+        isPremium: newUser.isPremium 
+      });
+    } else {
+      const token = jwt.sign(
+        { email: existingUser.email, id: existingUser._id },
+        process.env.JWT_SECRET,
+        { expiresIn: "1h" }
+      );
+
+      return res.status(200).json({
+        result: existingUser,
+        token,
+        isPremium: existingUser.isPremium
+      });
     }
-}
+  } catch (error) {
+    console.error("Login error:", error.message);
+    return res.status(500).json({ message: "Something went wrong...", error: error.message });
+  }
+};
